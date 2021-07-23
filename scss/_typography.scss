@@ -1,0 +1,25 @@
+body {
+	font-family: $font-main;
+}
+
+h1, .h1, h2, .h2 {
+
+	font-family: $font-soft;
+	letter-spacing: 1px;
+	.hungary &,
+	.turkey & {
+		font-family: $font-soft-alt;
+	}
+
+}
+
+.main-content {
+  h1 {
+    margin-bottom: 0.66em;
+  }
+}
+
+.small-link {
+	color: $gray-600;
+	font-size: 0.75em;
+}

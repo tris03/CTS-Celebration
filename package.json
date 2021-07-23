@@ -1,0 +1,21 @@
+{
+  "name": "changethestory.eu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  },
+  "dependencies": {
+    "@sanity/block-content-to-html": "^1.3.8",
+    "@sanity/client": "^1.150.7",
+    "clean-css": "^4.2.3",
+    "dotenv": "^8.6.0"
+  }
+}

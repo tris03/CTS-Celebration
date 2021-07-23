@@ -1,0 +1,85 @@
+.homepage {
+  > div p {
+
+    &:first-of-type {
+      font-family: $font-soft;
+      color: $orange;
+      font-weight: 500;
+      font-size: 1.375em;
+    }
+
+    &:last-of-type {
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.homepage {
+  background-image: url('/images/tug-of-war.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 232.5px 243px;
+  padding-top: 260px;
+  max-width: 54em;
+  position: relative;
+  @include media-breakpoint-up(md) {
+    background-position: top left;
+    padding-left: 23em;
+    padding-top: 13em;
+    background-size: 465px 486px;
+  }
+
+  &:after {
+    content:" ";
+    display: block;
+    position: absolute;
+    background-image: url('/images/wobble-one.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 54px 79.5px;
+    height: 79.5px;
+    width: 54px;
+    left: 22%;
+    top: 10px;
+    z-index: -1;
+    @include media-breakpoint-up(md) {
+      background-size: 108px 159px;
+      height: 159px;
+      width: 108px;
+      left: 15px;
+      top: 425px;
+    }
+  }
+
+  &:before {
+    content:" ";
+    display: block;
+    position: absolute;
+    background-image: url('/images/wobble-two.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 142.5px 97px;
+    height: 97px;
+    width: 142.5px;
+    left: 53%;
+    top: 100px;
+    z-index: -1;
+    @include media-breakpoint-up(md) {
+      background-size: 285px 194px;
+      height: 194px;
+      width: 285px;
+      left: 420px;
+      top: 0px;
+    }
+  }
+}
+
+.home-spaceman-container {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.spaceman-illustration {
+  height: 300px;
+  width: 180px;
+}

@@ -1,0 +1,13 @@
+---
+layout: layout.njk
+---
+
+
+<div class="container main-site-container">
+  <div class="row">
+  {% block maincontent %}
+    <main class="main-content--fullwidth">
+      {{ content | safe }}
+    </main>
+  {% endblock %}
+</div>

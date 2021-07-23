@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'bootstrap/bootstrap';
+@import 'mixins';
+
+.main-site-container {
+	@include svg-background-image('bottom-wobbles');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+img,
+iframe {
+	max-width: 100%;
+}
+
+.back-link {
+	&:before {
+		content: '\2190';
+		display: inline-block;
+		padding-right: 0.5em;
+	}
+}
+
+@import 'typography';
+@import 'header';
+@import 'footer';
+@import 'layout';
+@import 'buttons';
+@import 'sidemenu';
+
+@import 'home';
+@import 'story';
+@import 'meta-information';

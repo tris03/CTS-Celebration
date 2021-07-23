@@ -1,0 +1,65 @@
+---
+layout: layout-fullwidth.njk
+country: austria-stories
+pagination:
+    data: schools
+    size: 1
+    alias: school
+permalink: "/austria/schools/{{ school.name | slug }}/"
+---
+
+<style>
+.flex-grid {
+    justify-content: flex-start;
+}
+</style>
+
+<div class="story-page">
+    <div class="story__header">
+        <p><a href="/austria/schools/" class="small-link back-link">Zurück zu den Schulen</a></p>
+        <h1>{{ school.name }}</h1>
+    </div>
+    <div class="story__meta">
+        <ul class="list-unstyled meta-icon-list">
+            <li>
+                <i class="replace-with-icon replace-with-icon--school">School:</i> {{ school.name }}
+            </li>
+            <li>
+                <i class="replace-with-icon replace-with-icon--country">Country:</i>{{ school.country }}
+            </li>
+        </ul>
+    </div>
+    <div class="story__description">
+        <h4>Über die Schule</h4>
+        <p>{{ school.description | safe }}</p>
+    </div>
+
+    <div class="story__content">
+{% if stories|schoolFilter(school.name)|length %}
+<h3>Geschichten aus dieser Schule</h3>  
+    <div class="flex-grid">
+{% for storyrow in stories | schoolFilter(school.name)|batch(3) %}
+
+  {% for story in storyrow %}
+    <div class="flex-grid__item card card--story">
+      <div class="card-image-background" style="background-image: url('{{ story.mainImageUrl }}');">
+      </div>
+      <div class="card-body">
+        <p class="card-text"><a href="/austria/{{ story.name | slug }}" rel="noopener">{{ story.name }}</a></p>
+      </div>
+    </div>
+  {% endfor %}
+
+{% endfor %}
+{% endif %}
+</div>
+    
+    </div>
+
+    </div>
+
+
+
+
+</div>
+

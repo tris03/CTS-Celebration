@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.njk" %}
+   <body>
+
+<div class="header">
+  <div class="logo-tagline">
+    <a href="/" class="logo">
+      Change the Story 
+    </a>
+    <span class="tagline">
+    {% if country=="uk" %}
+        {{ homepages[0].tagline.en | safe }}
+     
+      {% elseif country=="uk" %}
+          {{ homepages[0].tagline.en | safe }}
+     
+      {% elseif country=="hungary" %}
+          {{ homepages[0].tagline.hu | safe }}
+      
+      {% elseif country=="austria" %}
+          {{ homepages[0].tagline.de | safe }}
+    
+      {% elseif country=="turkey" %}
+          {{ homepages[0].tagline.tr | safe }}
+    
+      {% elseif country=="italy" %}
+          {{ homepages[0].tagline.it | safe }}
+
+      {% else %}
+        {{ homepages[0].tagline.en | safe }}
+      {% endif %} 
+    </span>
+  </div>
+</div>
+    <main class="container main-site-container">
+      <div style="text-align:center;" class="mb-5">
+        {{ content | safe }}
+      </div>
+      <div class="row mb-5">
+        {% for country in countries %}
+
+          <div class="col mb-5 text-center">
+            <a href="{{ country.name | slug }}" rel="noopener">
+              <img src="{{ country.flagImageUrl }}" alt="{{ country.name}} flag" class="border border-dark"/>
+              <p class="mt-2 fs-5">{{ country.name }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% include "footer.njk" %}
+      </main>
+
+
+    </body>
+  </html>

@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+---
+
+<div class="container main-site-container">
+  <div class="row">
+
+  {% block maincontent %}
+    <main class="main-content main-content--twothirds">
+      {{ content | safe }}
+    </main>
+  {% endblock %}
+
+
+
+  {% block sidemenu %}
+    {% if title=="about" %}
+      {% if country=="uk" %}
+        {% include "sidebars/uk-about-sidebar.njk" %}
+      {% endif %}
+    {% endif %}
+  {% endblock %}
+
+</div>

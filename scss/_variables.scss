@@ -1,0 +1,39 @@
+//brand colours
+$color-black-hole: #180841;
+$color-deep-space: #521D62;
+$color-slate: #6B6773;
+$color-cloud: #FFF1B9;
+$color-sunshine: #FFC25F;
+$color-dust: #F37437;
+$color-hot-pink: #F14D9C;
+$color-ocean: #61B4C2;
+$color-organic: #027571;
+$color-purple-nova: #C988C5;
+
+//override bootstrap variables with our brand colours
+$black: 	$color-black-hole;
+$blue:    #0d6efd !default;
+$indigo: 	$color-deep-space;
+$purple:  $color-purple-nova;
+$pink:    $color-hot-pink;
+$red:     #dc3545 !default;
+$orange:  $color-dust;
+$yellow:  $color-sunshine;
+$green:  	$color-organic;
+$teal:    $color-ocean;
+$cyan:    #0dcaf0 !default;
+
+$font-soft: 'Fredoka One', -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+$font-main: 'Inter', -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+
+$font-soft-alt: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+//bootstrap variable overrides
+$body-color: $black;
+$headings-font-weight: 700;
+$headings-color: $color-deep-space;
+
+$link-color: $orange;
+
+$btn-font-weight: bold;
+$btn-border-radius: 50vh;
+$btn-font-family: $font-main;

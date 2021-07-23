@@ -1,0 +1,17 @@
+.btn {
+	padding: 0.75em 1.5em;
+	font-size: 1.0625em;
+}
+
+.btn-primary {
+	background-color: $color-sunshine;
+	color: $color-deep-space;
+	border-color: $color-sunshine;
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: lighten($color-sunshine, 15%);
+		color: $color-deep-space;
+	border-color: $color-sunshine;
+	}
+}

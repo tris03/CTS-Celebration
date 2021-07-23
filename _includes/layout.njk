@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<body class="{{ title }} {{ country }}">
+{% include "header.njk" %}
+<div class="header">
+  <div class="logo-tagline">
+    <a href="/" class="logo">
+      Change the Story 
+    </a>
+    <span class="tagline">
+      {% if country=="uk" %}
+        {{ homepages[0].tagline.en | safe }}
+     
+      {% elseif country=="uk" or country=="stories" %}
+          {{ homepages[0].tagline.en | safe }}
+     
+      {% elseif country=="hungary" %}
+          {{ homepages[0].tagline.hu | safe }}
+      
+      {% elseif country=="austria" %}
+          {{ homepages[0].tagline.de | safe }}
+    
+      {% elseif country=="turkey" %}
+          {{ homepages[0].tagline.tr | safe }}
+    
+      {% elseif country=="italy" %}
+          {{ homepages[0].tagline.it | safe }}
+
+      {% else %}
+        {{ homepages[0].tagline.en | safe }}
+      {% endif %} 
+      
+    </span>
+  </div>
+  <nav>
+    <ul class="nav header-nav">
+      {% block nav %}
+        {% if country=="uk" %}
+          {% include "menus/uk-menu.njk" %}
+        {% endif %}
+        {% if country=="hungary" %}
+          {% include "menus/hu-menu.njk" %}
+        {% endif %}
+        {% if country=="austria" %}
+          {% include "menus/au-menu.njk" %}
+        {% endif %}
+        {% if country=="turkey" %}
+          {% include "menus/tr-menu.njk" %}
+        {% endif %}
+        {% if country=="italy" %}
+          {% include "menus/it-menu.njk" %}
+        {% endif %}
+        {% if country=="uk-stories" %}
+          {% include "menus/uk-stories-menu.njk" %}
+        {% endif %}
+        {% if country=="turkey-stories" %}
+          {% include "menus/turkey-stories-menu.njk" %}
+        {% endif %}
+        {% if country=="austria-stories" %}
+          {% include "menus/austria-stories-menu.njk" %}
+        {% endif %}          
+      {% endblock %}
+    </ul>
+  </nav>
+</div>
+  
+  {{ content | safe }}
+  
+
+{% include "footer.njk" %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+---
+layout: layout-twothirds-sidebar.njk
+---
+{{ content | safe }}
+
+{% for resource in learningresourcesUK %}
+  <h2>{{ resource.title}}</h2>
+  {{ resource.mainContent.en | sanityToHTML | safe }}
+  <p>
+    <a href="{{ resource.documentUrl }}">Download</a>
+  </p>
+{% endfor %}

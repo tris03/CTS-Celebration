@@ -1,0 +1,54 @@
+---
+layout: layout-fullwidth.njk
+country: turkey-stories
+pagination:
+    data: stories
+    size: 1
+    alias: story
+permalink: "stories/turkey/{{ story.name | slug }}/"
+---
+
+<div class="story-page">
+    <div class="story__header">
+        <p><a href="/stories/turkey/" class="small-link back-link">Hikayelere geri dön</a></p>
+        <h1>{{ story.name }}</h1>
+    </div>
+    <div class="story__meta">
+        <ul class="list-unstyled meta-icon-list">
+            <li>
+                <i class="replace-with-icon replace-with-icon--school">Okul Adı:</i> {{ story.school }}
+            </li>
+            <li>
+                <i class="replace-with-icon replace-with-icon--country">ülke:</i>{{ story.country }}
+            </li>
+        </ul>
+    </div>
+    <div class="story__description">
+        {%- if story.who_created -%}
+        <h4>Bu Hikayeyi Kim Yarattı?</h4>
+        <p>{{ story.who_created | safe }}</p>
+        {%- endif -%}
+        {%- if story.who_created -%}
+        <h4>Hikaye Nasıl Oluşturuldu?</h4>
+        <p>{{ story.how_created | safe }}</p>
+        {%- endif -%}
+    </div>
+
+
+    <div class="story__content">
+    {{ story.content | sanityToHTML | safe }}
+        {%- if storycomments %}
+    <h3>Comments</h3>
+    {%- for storycomment in storycomments -%}
+        {%- if storycomment.storyId==story.storyId -%}
+    <p>{{ storycomment.comment }}</p>
+    <p>Name: {{ storycomment.name}}<p>
+    <p>School: {{ storycomment.school }} </p>
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+{% include "storycommentsform.njk" %}
+    </div>
+
+</div>
+
