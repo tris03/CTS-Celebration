@@ -56,7 +56,8 @@ const serializers = {
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("images/");
     eleventyConfig.addPassthroughCopy("css/");
-    eleventyConfig.addPassthroughCopy("documents/");
+    eleventyConfig.addPassthroughCopy("files/");
+
 
     eleventyConfig.addFilter('schoolFilter', function(collection, schoolName) {
       if (!schoolName) return collection;
