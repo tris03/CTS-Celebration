@@ -32,7 +32,7 @@ country: uk
 {% for school in schools  %}
   {% if  school.latitude|length %}
   var marker{{ loop.index }} = L.marker([{{  school.latitude }}, {{ school.longitude }} ]).addTo(mymap); 
-  marker{{ loop.index }}.bindPopup('<a href="/uk/schools/{{ school.name | slug }}/">{{ school.name }}</a>');
+  marker{{ loop.index }}.bindPopup('<a href="/austria/schools/{{ school.name | slug }}/">{{ school.name }}</a>');
   {% endif %}
 {% endfor %}
    </script>   
