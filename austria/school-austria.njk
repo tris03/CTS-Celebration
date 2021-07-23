@@ -31,6 +31,9 @@ permalink: "/austria/schools/{{ school.name | slug }}/"
     </div>
     <div class="story__description">
         <h4>Über die Schule</h4>
+{% if school.logoUrl %}
+        <img src="{{ school.logoUrl }} " alt="school logo" />
+{% endif %}
         <p>{{ school.description | safe }}</p>
     </div>
 

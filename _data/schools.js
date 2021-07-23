@@ -15,6 +15,7 @@ module.exports = async function () {
        name,
        "country": country->name,
        description,
+       "logoUrl": logo.asset->url,       
        latitude,
        longitude,
     } | order(publishedAt desc)
