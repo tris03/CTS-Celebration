@@ -30,8 +30,12 @@ permalink: "/uk/schools/{{ school.name | slug }}/"
         </ul>
     </div>
     <div class="story__description">
+    {% if school.logoUrl %}
+        <img src="{{ school.logoUrl }} " alt="school logo" />
+    {% endif %}
         <h4>About the School</h4>
         <p>{{ school.description | safe }}</p>
+
     </div>
 
     <div class="story__content">
