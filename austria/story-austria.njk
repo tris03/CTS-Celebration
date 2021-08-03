@@ -15,12 +15,16 @@ permalink: "/austria/{{ story.name | slug }}/"
     </div>
     <div class="story__meta">
         <ul class="list-unstyled meta-icon-list">
+        {%- if story.school -%}
             <li>
                 <i class="replace-with-icon replace-with-icon--school">Okul Adı:</i><a href="/austria/schools/{{ story.school | slug }}/">{{ story.school }}</a>
             </li>
+        {%- endif -%}
+        {%- if story.country -%}    
             <li>
                 <i class="replace-with-icon replace-with-icon--country">ülke:</i>{{ story.country }}
             </li>
+        {%- endif -%}
         </ul>
     </div>
     <div class="story__description">
@@ -40,8 +44,10 @@ permalink: "/austria/{{ story.name | slug }}/"
 
 
     <div class="story__content">
+    {%- if story.content -%}
     {{ story.content | sanityToHTML | safe }}
-        {%- if storycomments %}
+    {%- endif -%}
+    {%- if storycomments %}
     <h4>Comments</h4>
     {%- for storycomment in storycomments -%}
         {%- if storycomment.storyId==story.storyId -%}

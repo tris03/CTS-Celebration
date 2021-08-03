@@ -36,8 +36,10 @@ permalink: "stories/turkey/{{ story.name | slug }}/"
 
 
     <div class="story__content">
+    {%- if story.content -%}
     {{ story.content | sanityToHTML | safe }}
-        {%- if storycomments %}
+    {%- endif -%}
+    {%- if storycomments %}
     <h3>Comments</h3>
     {%- for storycomment in storycomments -%}
         {%- if storycomment.storyId==story.storyId -%}
