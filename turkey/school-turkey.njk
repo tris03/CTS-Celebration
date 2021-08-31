@@ -44,8 +44,6 @@ permalink: "/turkey/schools/{{ school.name | slug }}/"
     {% endif %}
         <h4>Okul Hakkında</h4>
         <p>{{ school.description | safe }}</p>
-        <h4>About the School</h4>
-        <p>{{ school.description | safe }}</p>
     {% if  school.latitude|length %}
         <h4>Okul nerede bulunur?</h4>
         <div id="mapid"></div>  
