@@ -3,4 +3,4 @@ layout: stories.njk
 country: austria-stories
 ---
 # Geschichten
-Hier ist eine Liste von Storys, die vom Change the Story-Projekt erstellt wurden
+Hier sind die ersten Geschichten, die Schülerinnen und Schüler unserer Change the Story Partnerschulen erstellt haben
