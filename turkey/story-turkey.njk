@@ -16,7 +16,7 @@ permalink: "/turkey/{{ story.name | slug }}/"
     <div class="story__meta">
         <ul class="list-unstyled meta-icon-list">
             <li>
-                <i class="replace-with-icon replace-with-icon--school">Okul Adı:</i> {{ story.school }}
+                <i class="replace-with-icon replace-with-icon--school">Okul Adı:</i> <a href="/turkey/schools/{{ story.school | slug }}/">{{ story.school }}</a>
             </li>
             <li>
                 <i class="replace-with-icon replace-with-icon--country">ülke:</i>{{ story.country }}
@@ -24,11 +24,15 @@ permalink: "/turkey/{{ story.name | slug }}/"
         </ul>
     </div>
     <div class="story__description">
+        {%- if story.description -%}
+        <h4>Açıklama</h4>
+        <p>{{ story.description | safe }}</p>
+        {%- endif -%}
         {%- if story.who_created -%}
         <h4>Bu Hikayeyi Kim Yarattı?</h4>
         <p>{{ story.who_created | safe }}</p>
         {%- endif -%}
-        {%- if story.who_created -%}
+        {%- if story.how_created -%}
         <h4>Hikaye Nasıl Oluşturuldu?</h4>
         <p>{{ story.how_created | safe }}</p>
         {%- endif -%}
