@@ -25,27 +25,27 @@ permalink: "/hungary/schools/{{ school.name | slug }}/"
 
 <div class="story-page">
     <div class="story__header">
-        <p><a href="/austria/schools/" class="small-link back-link">Zurück zu den Schulen</a></p>
+        <p><a href="/hungary/schools/" class="small-link back-link">Vissza az iskolákhoz</a></p>
         <h1>{{ school.name }}</h1>
     </div>
     <div class="story__meta">
         <ul class="list-unstyled meta-icon-list">
             <li>
-                <i class="replace-with-icon replace-with-icon--school">School:</i> {{ school.name }}
+                <i class="replace-with-icon replace-with-icon--school">Iskola:</i> {{ school.name }}
             </li>
             <li>
-                <i class="replace-with-icon replace-with-icon--country">Country:</i>{{ school.country }}
+                <i class="replace-with-icon replace-with-icon--country">Ország:</i>{{ school.country }}
             </li>
         </ul>
     </div>
     <div class="story__description">
-        <h4>Über die Schule</h4>
+        <h4>Az Iskoláról</h4>
 {% if school.logoUrl %}
         <img src="{{ school.logoUrl }} " alt="school logo" />
 {% endif %}
         <p>{{ school.description | safe }}</p>
 {% if  school.latitude|length %}
-        <h4>Wo befindet sich die Schule?</h4>
+        <h4>Hol található az iskola?</h4>
         <div id="mapid"></div>  
  <script>
    var mymap = L.map('mapid').setView([50.0755381, 14.43780049999998], 13);
@@ -67,7 +67,7 @@ permalink: "/hungary/schools/{{ school.name | slug }}/"
 
     <div class="story__content">
 {% if stories|schoolFilter(school.name)|length %}
-<h3>Geschichten aus dieser Schule</h3>  
+<h3>Történetek ebből az iskolából</h3>  
     <div class="flex-grid">
 {% for storyrow in stories | schoolFilter(school.name)|batch(3) %}
 
@@ -76,7 +76,7 @@ permalink: "/hungary/schools/{{ school.name | slug }}/"
       <div class="card-image-background" style="background-image: url('{{ story.mainImageUrl }}');">
       </div>
       <div class="card-body">
-        <p class="card-text"><a href="/austria/{{ story.name | slug }}" rel="noopener">{{ story.name }}</a></p>
+        <p class="card-text"><a href="/hungary/{{ story.name | slug }}" rel="noopener">{{ story.name }}</a></p>
       </div>
     </div>
   {% endfor %}

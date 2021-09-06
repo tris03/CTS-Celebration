@@ -4,11 +4,11 @@ country: turkey-stories
 pagination:
     data: countries
     size: 1
-    alias: country
-permalink: "/turkey/stories-{{ country.name | slug }}/"
+    alias: filteredCountry
+permalink: "/turkey/stories-{{ filteredCountry.name | slug }}/"
 ---
 
 <p><a href="../index.html" class="small-link back-link">Tüm hikayelere geri dön</a></p>
-<h2>Hikayeler {{ country.name }}</h2>
+<h2>Hikayeler {{ filteredCountry.name }}</h2>
 
 

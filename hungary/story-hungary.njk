@@ -10,34 +10,34 @@ permalink: "/hungary/{{ story.name | slug }}/"
 
 <div class="story-page">
     <div class="story__header">
-        <p><a href="/austria/" class="small-link back-link">Zurück zu Geschichten</a></p>
+        <p><a href="/hungary/" class="small-link back-link">Vissza a történetekhez</a></p>
         <h1>{{ story.name }}</h1>
     </div>
     <div class="story__meta">
         <ul class="list-unstyled meta-icon-list">
         {%- if story.school -%}
             <li>
-                <i class="replace-with-icon replace-with-icon--school">Okul Adı:</i><a href="/austria/schools/{{ story.school | slug }}/">{{ story.school }}</a>
+                <i class="replace-with-icon replace-with-icon--school">Iskola:</i><a href="/hungary/schools/{{ story.school | slug }}/">{{ story.school }}</a>
             </li>
         {%- endif -%}
         {%- if story.country -%}    
             <li>
-                <i class="replace-with-icon replace-with-icon--country">ülke:</i>{{ story.country }}
+                <i class="replace-with-icon replace-with-icon--country">Ország:</i>{{ story.country }}
             </li>
         {%- endif -%}
         </ul>
     </div>
     <div class="story__description">
         {%- if story.description -%}
-        <h4>Beschreibung</h4>
+        <h4>Ország</h4>
         <p>{{ story.description | safe }}</p>
         {%- endif -%}
         {%- if story.who_created -%}
-        <h4>Wer hat diese Geschichte erstellt?</h4>
+        <h4>Aki megalkotta a történetet?</h4>
         <p>{{ story.who_created | safe }}</p>
         {%- endif -%}
         {%- if story.who_created -%}
-        <h4>Wie wurde die Geschichte erstellt?</h4>
+        <h4>Hogyan jött létre a történet?</h4>
         <p>{{ story.how_created | safe }}</p>
         {%- endif -%}
     </div>
@@ -48,7 +48,7 @@ permalink: "/hungary/{{ story.name | slug }}/"
     {{ story.content | sanityToHTML | safe }}
     {%- endif -%}
     {%- if storycomments %}
-    <h4>Comments</h4>
+    <h4>Hogyan jött létre a történet</h4>
     {%- for storycomment in storycomments -%}
         {%- if storycomment.storyId==story.storyId -%}
     <p>{{ storycomment.comment }}</p>

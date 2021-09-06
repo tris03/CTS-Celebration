@@ -2,7 +2,7 @@
 layout: schools-hungary.njk
 country: hungary-stories
 ---
-# Schulen
-Hier ist eine Liste der Schulen, die am Change the Story-Projekt beteiligt sind
+# Iskolák
+Itt található a Change the Story projektben részt vevő iskolák listája
 
 

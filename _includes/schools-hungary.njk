@@ -32,14 +32,14 @@ country: hungary
 {% for school in schools  %}
   {% if  school.latitude|length %}
   var marker{{ loop.index }} = L.marker([{{  school.latitude }}, {{ school.longitude }} ]).addTo(mymap); 
-  marker{{ loop.index }}.bindPopup('<a href="/uk/schools/{{ school.name | slug }}/">{{ school.name }}</a>');
+  marker{{ loop.index }}.bindPopup('<a href="/hungary/schools/{{ school.name | slug }}/">{{ school.name }}</a>');
   {% endif %}
 {% endfor %}
    </script>   
 
-<h2>List of Schools</h2>
+<h2>Iskolák listája</h2>
 <ul>
 {% for school in schools  %}
-  <li><a href="/uk/schools/{{ school.name | slug }}/">{{ school.name }}</a></li>
+  <li><a href="/hungary/schools/{{ school.name | slug }}/">{{ school.name }}</a></li>
 {% endfor %}
 </ul>

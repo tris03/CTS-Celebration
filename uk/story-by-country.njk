@@ -4,11 +4,11 @@ country: uk-stories
 pagination:
     data: countries
     size: 1
-    alias: country
-permalink: "/uk/stories-{{ country.name | slug }}/"
+    alias: filteredCountry
+permalink: "/uk/stories-{{ filteredCountry.name | slug }}/"
 ---
 
 <p><a href="../index.html" class="small-link back-link">Back to all stories</a></p>
-<h2>Stories from {{ country.name }}</h2>
+<h2>Stories from {{ filteredCountry.name }}</h2>
 
 
