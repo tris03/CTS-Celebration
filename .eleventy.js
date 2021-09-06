@@ -65,6 +65,12 @@ module.exports = function(eleventyConfig) {
         return filtered;
     });
 
+    eleventyConfig.addFilter('countryFilter', function(collection, country) {
+      if (!country) return collection;
+        const filtered = collection.filter(item => item.country == country)
+        return filtered;
+    });
+
 
     eleventyConfig.addFilter('localeContent', function(values,key)
     {
