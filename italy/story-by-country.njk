@@ -1,0 +1,14 @@
+---
+layout: stories-by-country.njk
+country: italy-stories
+pagination:
+    data: countries
+    size: 1
+    alias: filteredCountry
+permalink: "/italy/stories-{{ filteredCountry.name | slug }}/"
+---
+
+<p><a href="../index.html" class="small-link back-link">Torna a tutte le storie</a></p>
+<h2>Storie da {{ filteredCountry.name }}</h2>
+
+

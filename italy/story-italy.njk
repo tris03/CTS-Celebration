@@ -1,0 +1,60 @@
+---
+layout: layout-fullwidth.njk
+country: italy-stories
+pagination:
+    data: stories
+    size: 1
+    alias: story
+permalink: "/italy/{{ story.name | slug }}/"
+---
+
+<div class="story-page">
+    <div class="story__header">
+        <p><a href="/uk/" class="small-link back-link">Torna alle storie</a></p>
+        <h1>{{ story.name }}</h1>
+    </div>
+    <div class="story__meta">
+        <ul class="list-unstyled meta-icon-list">
+            <li>
+                <i class="replace-with-icon replace-with-icon--school">Scuola:</i> <a href="/italy/schools/{{ story.school | slug }}/">{{ story.school }}</a>
+            </li>
+            <li>
+                <i class="replace-with-icon replace-with-icon--country">Nazione:</i>{{ story.country }}
+            </li>
+        </ul>
+    </div>
+    <div class="story__description">
+        {%- if story.description -%}
+        <h4>Descrizione</h4>
+        <p>{{ story.description | safe }}</p>
+        {%- endif -%}
+        {%- if story.who_created -%}
+        <h4>Chi ha creato questa storia?</h4>
+        <p>{{ story.who_created | safe }}</p>
+        {%- endif -%}
+        {%- if story.who_created -%}
+        <h4>Come è stata creata la storia?</h4>
+        <p>{{ story.how_created | safe }}</p>
+        {%- endif -%}
+    </div>
+
+
+    <div class="story__content">
+    {%- if story.content -%}
+    {{ story.content | sanityToHTML | safe }}
+    {%- endif -%}
+    {%- if storycomments %}
+    <h3>Commenti</h3>
+    {%- for storycomment in storycomments -%}
+        {%- if storycomment.storyId==story.storyId -%}
+    <p>{{ storycomment.comment }}</p>
+    <p>Name: {{ storycomment.name}}<p>
+    <p>School: {{ storycomment.school }} </p>
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+{% include "storycommentsform.njk" %}
+    </div>
+
+</div>
+
