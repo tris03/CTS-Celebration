@@ -48,12 +48,12 @@ permalink: "/turkey/{{ story.name | slug }}/"
     {%- for storycomment in storycomments -%}
         {%- if storycomment.storyId==story.storyId -%}
     <p>{{ storycomment.comment }}</p>
-    <p>Name: {{ storycomment.name}}<p>
-    <p>School: {{ storycomment.school }} </p>
+    <p>Keresztnév: {{ storycomment.name}}<p>
+    <p>Iskola/helyszín: {{ storycomment.school }} </p>
         {%- endif -%}
     {%- endfor -%}
 {%- endif -%}
-{% include "storycommentsform.njk" %}
+{% include "feedback/turkey-stories-form.njk" %}
     </div>
 
 </div>
