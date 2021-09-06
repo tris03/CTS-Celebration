@@ -2,11 +2,11 @@
 {% if filterByCountryText %}
 {{ filterByCountryText }}
 {% else %}
-Filter by filterBy
+Filter by country
 {% endif %}
 : 
 {% for country in countries %}
   <a href="stories-{{ country.name | slug }}/">{{ country.name }}</a> 
   {% if not loop.last %} | {% endif %}
 {% endfor %}
-</p>
+</p> 
