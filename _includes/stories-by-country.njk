@@ -10,7 +10,7 @@ layout: layout-fullwidth.njk
 </style>
 
 <div class="flex-grid">
-{% for storyrow in stories | countryFilter(country.name) | batch(3) %}
+{% for storyrow in stories | countryFilter(filteredCountry.name) | batch(3) %}
 
   {% for story in storyrow %}
     <div class="flex-grid__item card card--story">
