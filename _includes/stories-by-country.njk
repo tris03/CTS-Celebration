@@ -17,7 +17,7 @@ layout: layout-fullwidth.njk
       <div class="card-image-background" style="background-image: url('{{ story.mainImageUrl }}');">
       </div>
       <div class="card-body">
-        <p class="card-text"><a href="{{ story.name | slug }}" rel="noopener">{{ story.name }}</a></p>
+        <p class="card-text"><a href="../{{ story.name | slug }}" rel="noopener">{{ story.name }}</a></p>
       </div>
     </div>
   {% endfor %}
