@@ -35,30 +35,7 @@
   <nav>
     <ul class="nav header-nav">
       {% block nav %}
-        {% if country=="uk" %}
-          {% include "menus/uk-menu.njk" %}
-        {% endif %}
-        {% if country=="hungary" %}
-          {% include "menus/hu-menu.njk" %}
-        {% endif %}
-        {% if country=="austria" %}
-          {% include "menus/au-menu.njk" %}
-        {% endif %}
-        {% if country=="turkey" %}
-          {% include "menus/tr-menu.njk" %}
-        {% endif %}
-        {% if country=="italy" %}
-          {% include "menus/it-menu.njk" %}
-        {% endif %}
-        {% if country=="uk-stories" %}
-          {% include "menus/uk-stories-menu.njk" %}
-        {% endif %}
-        {% if country=="turkey-stories" %}
-          {% include "menus/turkey-stories-menu.njk" %}
-        {% endif %}
-        {% if country=="austria-stories" %}
-          {% include "menus/austria-stories-menu.njk" %}
-        {% endif %}          
+          {% include "menus/" + country + "-menu.njk" %}          
       {% endblock %}
     </ul>
   </nav>
