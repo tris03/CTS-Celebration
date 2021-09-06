@@ -48,16 +48,16 @@ permalink: "/austria/{{ story.name | slug }}/"
     {{ story.content | sanityToHTML | safe }}
     {%- endif -%}
     {%- if storycomments %}
-    <h4>Comments</h4>
+    <h4>Kommentare</h4>
     {%- for storycomment in storycomments -%}
         {%- if storycomment.storyId==story.storyId -%}
     <p>{{ storycomment.comment }}</p>
-    <p>Name: {{ storycomment.name}}<p>
-    <p>School: {{ storycomment.school }} </p>
+    <p>Vorname: {{ storycomment.name}}<p>
+    <p>Schule/Ort: {{ storycomment.school }} </p>
         {%- endif -%}
     {%- endfor -%}
 {%- endif -%}
-{% include "storycommentsform.njk" %}
+{% include "feedback/austrian-stories-form.njk" %}
     </div>
 
 </div>
