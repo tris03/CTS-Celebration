@@ -10,11 +10,8 @@ country: uk
 }
 </style>
 
-{% include "/filters/filter-by-country.njk" %}
-
-
 <div class="flex-grid">
-{% for storyrow in stories | batch(3) %}
+{% for storyrow in stories | countryFilter(country.name) | batch(3) %}
 
   {% for story in storyrow %}
     <div class="flex-grid__item card card--story">
