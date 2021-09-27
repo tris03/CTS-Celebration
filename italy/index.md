@@ -1,6 +1,6 @@
 ---
 layout: stories.njk
-country: italy-stories
+country: italy
 filterByCountryText: "Filtra per paese"
 ---
 # Storie

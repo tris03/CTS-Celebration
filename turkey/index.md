@@ -1,6 +1,6 @@
 ---
 layout: stories.njk
-country: turkey-stories
+country: turkey
 ---
 # Hikayeler
 İşte Hikayeyi Değiştir projesi tarafından oluşturulan hikayelerin bir listesi

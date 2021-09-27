@@ -1,6 +1,6 @@
 ---
 layout: layout-fullwidth.njk
-country: hungary-stories
+country: hungary
 pagination:
     data: schools
     size: 1
@@ -8,89 +8,58 @@ pagination:
 permalink: "/hungary/schools/{{ school.name | slug }}/"
 ---
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-
-<style>
-#mapid { height: 400px; border: 1px solid black; }
-.flex-grid {
-    justify-content: flex-start;
-}
-</style>
-
-
 <div class="story-page">
-    <div class="story__header">
-        <p><a href="/hungary/schools/" class="small-link back-link">Vissza az iskolákhoz</a></p>
-        <h1>{{ school.name }}</h1>
-    </div>
-    <div class="story__meta">
-        <ul class="list-unstyled meta-icon-list">
-            <li>
-                <i class="replace-with-icon replace-with-icon--school">Iskola:</i> {{ school.name }}
-            </li>
-            <li>
-                <i class="replace-with-icon replace-with-icon--country">Ország:</i>{{ school.country }}
-            </li>
-        </ul>
-    </div>
-    <div class="story__description">
-        <h4>Az Iskoláról</h4>
-{% if school.logoUrl %}
-        <img src="{{ school.logoUrl }} " alt="school logo" />
-{% endif %}
-        <p>{{ school.description | safe }}</p>
-{% if  school.latitude|length %}
-        <h4>Hol található az iskola?</h4>
-        <div id="mapid"></div>  
- <script>
-   var mymap = L.map('mapid').setView([50.0755381, 14.43780049999998], 13);
-   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 4,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiamFtZXNkcmV2ZXIiLCJhIjoiY2txMmhzbnJ4MGJ2aDJva2FoN3QxdmR0dCJ9.ZNR6w7R_dVfQeX2Dj2v4KA'
-}).addTo(mymap);
+  <div class="story__header">
+    <p>
+      <a href="/hungary/schools/" class="small-link back-link">Vissza az iskolákhoz</a>
+    </p>
+    <h1>{{ school.name }}</h1>
+  </div>
+  <div class="story__meta">
+    <ul class="list-unstyled meta-icon-list">
+      <li>
+        <i class="replace-with-icon replace-with-icon--school">Iskola:</i>
+        {{ school.name }}
+      </li>
+      <li>
+        <i class="replace-with-icon replace-with-icon--country">Ország:</i>{{ school.country }}
+      </li>
+    </ul>
+  </div>
+  <div class="story__description">
+    <h4>Az Iskoláról</h4>
+    {% if school.logoUrl %}
+      <img src="{{ school.logoUrl }} " alt="school logo"/>
+    {% endif %}
+    <p>{{ school.description | safe }}</p>
+    {% if school.latitude | length %}
+      <h4>Hol található az iskola?</h4>
+      {% include "../_includes/school-map.njk" %}
+    {% endif %}
+  </div>
+  <div class="story__content">
+    {% if stories | schoolFilter(school.name) | length %}
+      <h3>Történetek ebből az iskolából</h3>
+      <div class="flex-grid">
+        {% for storyrow in stories | schoolFilter(school.name) | batch(3) %}
 
-  var marker{{ loop.index }} = L.marker([{{  school.latitude }}, {{ school.longitude }} ]).addTo(mymap); 
-  marker{{ loop.index }}.bindPopup('{{ school.name }}');
-</script>   
-{% endif %}
+          {% for story in storyrow %}
+            <div class="flex-grid__item card card--story">
+              <div class="card-image-background" style="background-image: url('{{ story.mainImageUrl }}');"></div>
+              <div class="card-body">
+                <p class="card-text">
+                  <a href="/hungary/{{ story.name | slug }}" rel="noopener">{{ story.name }}</a>
+                </p>
+              </div>
+            </div>
+          {% endfor %}
 
-    </div>
-
-    <div class="story__content">
-{% if stories|schoolFilter(school.name)|length %}
-<h3>Történetek ebből az iskolából</h3>  
-    <div class="flex-grid">
-{% for storyrow in stories | schoolFilter(school.name)|batch(3) %}
-
-  {% for story in storyrow %}
-    <div class="flex-grid__item card card--story">
-      <div class="card-image-background" style="background-image: url('{{ story.mainImageUrl }}');">
-      </div>
-      <div class="card-body">
-        <p class="card-text"><a href="/hungary/{{ story.name | slug }}" rel="noopener">{{ story.name }}</a></p>
-      </div>
-    </div>
-  {% endfor %}
-
-{% endfor %}
-{% endif %}
-</div>
-    
+        {% endfor %}
+      {% endif %}
     </div>
 
-    </div>
-
-
-
+  </div>
 
 </div>
 
+</div>

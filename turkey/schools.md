@@ -1,6 +1,6 @@
 ---
 layout: schools-turkey.njk
-country: turkey-stories
+country: turkey
 ---
 # Okullar
 İşte Hikayeyi Değiştir projesine dahil olan okulların listesi

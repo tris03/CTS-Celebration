@@ -1,6 +1,6 @@
 ---
 layout: schools-italy.njk
-country: italy-stories
+country: italy
 ---
 # Scuole
 Ecco un elenco delle scuole coinvolte nel progetto Change the Story

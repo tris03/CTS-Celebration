@@ -1,6 +1,6 @@
 ---
 layout: stories.njk
-country: hungary-stories
+country: hungary
 filterByCountryText: "Szűrés ország szerint"
 ---
 # Történetek
