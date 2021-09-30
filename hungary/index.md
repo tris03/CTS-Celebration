@@ -4,4 +4,5 @@ country: hungary
 filterByCountryText: "Szűrés ország szerint"
 ---
 # Történetek
-Itt található a Történet megváltoztatása projekt által létrehozott történetek listája
+Itt található a „Változtass a történeten!” című projekt során készített történetek listája:
+
