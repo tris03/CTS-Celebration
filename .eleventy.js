@@ -58,9 +58,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("css/");
     eleventyConfig.addPassthroughCopy("files/");
 
-
-    eleventyConfig.addFilter("removeSingleQuote", function(value) {return value.replace("&#39;","www") });
-
     eleventyConfig.addFilter('schoolFilter', function(collection, schoolName) {
       if (!schoolName) return collection;
         const filtered = collection.filter(item => item.school == schoolName)
