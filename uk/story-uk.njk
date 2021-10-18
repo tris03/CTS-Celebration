@@ -17,10 +17,13 @@ permalink: "/uk/{{ story.name | slug }}/"
     </div>
     <div class="story__meta">
         <ul class="list-unstyled meta-icon-list">
+            {%- if story.school -%}
             <li>
+
                 <i class="replace-with-icon replace-with-icon--school">School:</i>
                 <a href="/uk/schools/{{ story.school | slug }}/">{{ story.school }}</a>
             </li>
+            {%- endif -%}
             <li>
                 <i class="replace-with-icon replace-with-icon--country">Country:</i>{{ story.country }}
             </li>
