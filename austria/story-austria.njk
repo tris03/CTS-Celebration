@@ -36,7 +36,7 @@ permalink: "/austria/{{ story.name | slug }}/"
         <h4>Wer hat diese Geschichte erstellt?</h4>
         <p>{{ story.who_created | safe }}</p>
         {%- endif -%}
-        {%- if story.who_created -%}
+        {%- if story.how_created -%}
         <h4>Wie wurde die Geschichte erstellt?</h4>
         <p>{{ story.how_created | safe }}</p>
         {%- endif -%}
