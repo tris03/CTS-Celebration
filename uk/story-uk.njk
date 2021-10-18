@@ -5,7 +5,7 @@ pagination:
     data: allstories
     size: 1
     alias: story
-permalink: "/uk/{{ story.name | slugify }}/"
+permalink: "/uk/{{ story.name  | slug | replace('#','') }}/"
 ---
 
 <div class="story-page">
