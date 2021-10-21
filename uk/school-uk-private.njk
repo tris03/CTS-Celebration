@@ -40,7 +40,7 @@ permalink: "/uk/schools/private/{{ school.name | slug }}/"
     </div>
 
     <div class="story__content">
-        {% if stories | schoolFilter(school.name) | length %}
+        {% if allstories | schoolFilter(school.name) | length %}
             <h3>Stories from this School</h3>
             <div class="flex-grid">
                 {% for storyrow in allstories | schoolFilter(school.name) | batch(3) %}
