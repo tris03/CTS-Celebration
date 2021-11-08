@@ -30,15 +30,15 @@ permalink: "/hungary/{{ story.name | slug }}/"
     <div class="story__description">
         {%- if story.description -%}
         <h4>Ország</h4>
-        <p>{{ story.description | safe }}</p>
+        <p>{{ story.description | striptags(true) | escape | nl2br  }}</p>
         {%- endif -%}
         {%- if story.who_created -%}
         <h4>Aki megalkotta a történetet?</h4>
-        <p>{{ story.who_created | safe }}</p>
+        <p>{{ story.who_created  | striptags(true) | escape | nl2br  }}</p>
         {%- endif -%}
         {%- if story.how_created -%}
         <h4>Hogyan jött létre a történet?</h4>
-        <p>{{ story.how_created | safe }}</p>
+        <p>{{ story.how_created  | striptags(true) | escape | nl2br  }}</p>
         {%- endif -%}
     </div>
 

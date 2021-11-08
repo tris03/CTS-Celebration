@@ -30,15 +30,15 @@ permalink: "/austria/{{ story.name | slug }}/"
     <div class="story__description">
         {%- if story.description -%}
         <h4>Beschreibung</h4>
-        <p>{{ story.description | safe }}</p>
+        <p>{{ story.description | striptags(true) | escape | nl2br  }}</p>
         {%- endif -%}
         {%- if story.who_created -%}
         <h4>Wer hat diese Geschichte erstellt?</h4>
-        <p>{{ story.who_created | safe }}</p>
+        <p>{{ story.who_created  | striptags(true) | escape | nl2br  }}</p>
         {%- endif -%}
         {%- if story.how_created -%}
         <h4>Wie wurde die Geschichte erstellt?</h4>
-        <p>{{ story.how_created | safe }}</p>
+        <p>{{ story.how_created  | striptags(true) | escape | nl2br  }}</p>
         {%- endif -%}
     </div>
 
