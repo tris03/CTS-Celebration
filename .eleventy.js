@@ -1,5 +1,6 @@
 const blocksToHtml = require('@sanity/block-content-to-html')
 const CleanCSS = require("clean-css");
+const slugify = require("slugify");
 
 // `h` is a way to build HTML known as hyperscript
 // See https://github.com/hyperhype/hyperscript for more info
@@ -53,6 +54,8 @@ const serializers = {
   }
 }
 
+
+
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("images/");
     eleventyConfig.addPassthroughCopy("css/");
@@ -84,6 +87,15 @@ module.exports = function(eleventyConfig) {
         dataset: 'production',
       })
     })
+
+    eleventyConfig.addFilter("slug", (input) => {
+      const options = {
+        replacement: "-",
+        remove: /[&,+()$~%.'":*?<>{}]/g,
+        lower: true
+      };
+      return slugify(input, options);
+    });
 
     eleventyConfig.addFilter("cssmin", function(code) {
       return new CleanCSS({}).minify(code).styles;
