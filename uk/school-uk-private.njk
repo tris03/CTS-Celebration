@@ -25,6 +25,16 @@ permalink: "/uk/schools/private/{{ school.name | slug }}/"
             </li>
         </ul>
     </div>
+    <div class="likebutton">
+        <form name="CTS_LIKESTORY" method="POST" data-netlify="true">
+            <p>
+              <button type="submit">Like this Story</button>
+            </p>
+          </form>
+
+    </div>
+
+
     <div class="story__description">
         <p><b>This page is intended for sharing only within the school.  Please don't share more widely.</b></p>
         {% if school.logoUrl %}
